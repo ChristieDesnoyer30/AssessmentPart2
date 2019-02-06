@@ -22,5 +22,5 @@ public class BabyAnimal extends Animal {
     public void setBirthDate(String birthDate) {
         this.birthDate = birthDate;
     }
-    
+
 }
