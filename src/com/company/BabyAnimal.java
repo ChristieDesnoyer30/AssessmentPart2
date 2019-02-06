@@ -11,7 +11,7 @@ public class BabyAnimal extends Animal {
 
     @Override
     public void printAnimal(){
-        System.out.println( "This is a baby " + getGender()+ " " + getSpecies() + ", named" + getName() + "."
+        System.out.println( "This is a baby " + getGender()+ " " + getSpecies() + ", named " + getName() + ". "
         + "They were born in the zoo on " + birthDate);
     }
 

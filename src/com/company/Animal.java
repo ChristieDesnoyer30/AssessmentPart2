@@ -6,6 +6,8 @@ public class Animal {
     private String species;
     private String gender;
 
+
+
     public Animal(String name, String species, String gender) {
         this.name = name;
         this.species = species;
@@ -14,7 +16,7 @@ public class Animal {
 
     public void printAnimal(){
 
-        System.out.println("The " + species + "is named " + name + ", and is a " + gender);
+        System.out.println("The " + species + " is named " + name + ", and is a " + gender);
     }
 
     public String getName() {
