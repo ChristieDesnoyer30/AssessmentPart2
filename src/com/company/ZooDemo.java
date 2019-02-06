@@ -36,8 +36,9 @@ public class ZooDemo {
                     //Create a pen and add animals to it.
                     animalPen.addAnimalsToPen();
 
+                    Pen p = animalPen.createPen();
                     //add Pen to the zoo;
-                    zoo.addPenToZoo(animalPen);
+                    zoo.addPenToZoo(p);
 
                     break;
 
@@ -47,17 +48,19 @@ public class ZooDemo {
 
                 case 3:
 
+
                     break;
 
                 case 4:
 
                     break;
+
                 case 5:
 
                     break;
+
                 case 6:
 
-                    zoo.printZoo();
 
                     break;
                 case 7:

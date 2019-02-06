@@ -12,15 +12,13 @@ public class Zoo {
         zooPens.add(pens);
     }
 
-    public void printZoo()
-    {
-      for(Pen pens : zooPens)  {
 
-          pens.printPenDetails();
-      }
+public void printZoo(){
+        for(Pen pens : zooPens){
 
-    }
-
+            System.out.println(pens);
+        }
+}
 
 
 

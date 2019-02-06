@@ -6,9 +6,18 @@ import java.util.Scanner;
 
 public class Pen {
 
-    private ArrayList<Animal> animals = new ArrayList<>();
-    private ArrayList<BabyAnimal> babies = new ArrayList<>();
-    ArrayList<Animal> animalPen = new ArrayList<>();
+    private ArrayList<Animal> animals;
+    private ArrayList<BabyAnimal> babies;
+
+    public Pen(){
+
+    }
+
+
+    public Pen(ArrayList<Animal> animals, ArrayList<BabyAnimal> babies) {
+        this.animals = animals;
+        this.babies = babies;
+    }
 
     public void addAnimalsToPen() {
 
@@ -17,55 +26,19 @@ public class Pen {
         Scanner scan = new Scanner(System.in);
 
 
-        System.out.println("What kind of species will go in the pen? ");
-
-        String animalSpecies = scan.nextLine();
-
         do {
+
             System.out.println("Press 1 to add an  Adult Animal or press 2 to add a Baby animal? 3. To complete adding animals.");
 
             int userChoice = scan.nextInt();
 
             if (userChoice == 1) {
 
-                System.out.println("Enter the animals name: ");
-
-                scan.nextLine();
-
-                String animalName = scan.nextLine();
-
-
-                System.out.println("Enter the animals gender: ");
-
-                String animalGender = scan.nextLine();
-
-                Animal a = new Animal(animalName, animalSpecies, animalGender);
-
-                animals.add(a);
-
-                a.printAnimal();
+                addAnimal();
 
             } else if (userChoice == 2) {
 
-                System.out.println("Enter the  baby animals name: ");
-
-                scan.nextLine();
-
-                String babyName = scan.nextLine();
-
-                System.out.println("Enter the baby's gender: ");
-
-                String babyGender = scan.nextLine();
-
-                System.out.println("Enter the day the baby was born: ");
-
-                String birthDay = scan.nextLine();
-
-                BabyAnimal b = new BabyAnimal(babyName, animalSpecies, babyGender, birthDay);
-
-                babies.add(b);
-
-                b.printAnimal();
+             addBaby();
 
             } else if (userChoice == 3) {
 
@@ -86,42 +59,68 @@ public class Pen {
 
     }
 
+    private void addBaby() {
 
-    public void createPen() {
-
-
-        for (Animal a : animals) {
-            animalPen.add(a);
-        }
-
-        for (BabyAnimal b : babies) {
-            animalPen.add(b);
-        }
+        Scanner scan = new Scanner(System.in);
 
 
-          printPenDetails();
-        }
+        System.out.println("What kind of species will go in the pen? ");
+        String animalSpecies = scan.nextLine();
+
+        System.out.println("Enter the  baby animals name: ");
+
+        String babyName = scan.nextLine();
+
+        System.out.println("Enter the baby's gender: ");
+
+        String babyGender = scan.nextLine();
+
+        System.out.println("Enter the day the baby was born: ");
+
+        String birthDay = scan.nextLine();
+
+        BabyAnimal b = new BabyAnimal(babyName, animalSpecies, babyGender, birthDay);
+
+        babies.add(b);
+
+        b.printAnimal();
+    }
+
+    private void addAnimal() {
+
+        Scanner scan = new Scanner(System.in);
+
+        System.out.println("What kind of species will go in the pen? ");
+
+        String animalSpecies = scan.nextLine();
+
+        System.out.println("Enter the animals name: ");
+
+        String animalName = scan.nextLine();
 
 
-    public void printPenDetails(){
-            System.out.println("Here are the animals in your " + animals.get(0).getSpecies() + " pen");
+        System.out.println("Enter the animals gender: ");
 
-        for (Animal ab : animalPen) {
+        String animalGender = scan.nextLine();
 
-        ab.printAnimal();
+        Animal a = new Animal(animalName, animalSpecies, animalGender);
+
+        animals.add(a);
+
+        a.printAnimal();
 
     }
 
 
-}
+    public Pen createPen() {
 
-public void clearPen(){
+        Pen p = new Pen(animals, babies);
 
-        for(Animal ab : animalPen){
 
-            animalPen.remove(ab);
-        }
-}
+        return p;
+
+
+    }
 
 
 }
