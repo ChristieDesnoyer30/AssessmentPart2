@@ -61,8 +61,10 @@ public class ZooDemo {
 
                 case 6:
 
+                 zoo.printZoo();
 
-                    break;
+                     break;
+
                 case 7:
 
                     System.out.println("Thank you for visitng the zoo.");

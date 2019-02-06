@@ -81,8 +81,6 @@ public class Pen {
 
         BabyAnimal b = new BabyAnimal(babyName, animalSpecies, babyGender, birthDay);
 
-        babies.add(b);
-
         b.printAnimal();
     }
 
@@ -98,14 +96,11 @@ public class Pen {
 
         String animalName = scan.nextLine();
 
-
         System.out.println("Enter the animals gender: ");
 
         String animalGender = scan.nextLine();
 
         Animal a = new Animal(animalName, animalSpecies, animalGender);
-
-        animals.add(a);
 
         a.printAnimal();
 
@@ -115,7 +110,6 @@ public class Pen {
     public Pen createPen() {
 
         Pen p = new Pen(animals, babies);
-
 
         return p;
 
